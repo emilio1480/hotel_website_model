@@ -21,8 +21,8 @@ export default function DesktopMenu({
 					<span className={`bg-primary absolute right-1/2 -bottom-2 h-0.5 translate-x-1/2 transition-all ease-out ${pathName === item.href ? "w-full" : "w-0"}`} />
 				</li>
 			))}
-			<li className="capitalize hover:text-[#ffdc84]">
-				<LanguageSwitcher text={nav.language} />
+			<li className="capitalize ">
+				<LanguageSwitcher languageStyles={"justify-items-center"} className={"hover:text-[#ffdc84]"} text={nav.language} />
 			</li>
 		</ul>
 	);

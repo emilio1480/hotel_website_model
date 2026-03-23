@@ -15,17 +15,17 @@ function getNextPath(paths: string[], locale: string) {
 	return paths.join("/");
 }
 
-export function LanguageSwitcher({ className, text }: Readonly<{ className?: string; text: string }>) {
+export function LanguageSwitcher({ className, languageStyles, text }: Readonly<{ className?: string, languageStyles: string, text: string }>) {
 	const pathName = usePathname();
 	const paths = pathName.split("/");
 
 	return (
 		<Disclosure>
-			<div className={"grid grid-cols-1 justify-items-left "}>
-			<DisclosureButton as="button" className={`${className} cursor-pointer`}>
+			<div className={"grid grid-cols-1 justify-items-start "}>
+			<DisclosureButton as="button" className={` ${className} cursor-pointer`}>
 				{text}
 			</DisclosureButton>
-			<DisclosurePanel className={"grid grid-cols-1 justify-items-left "}>
+			<DisclosurePanel className={`grid grid-cols-1 px-3 ${languageStyles}`}>
 				{locales.map((locale) => (
 					<DisclosureButton className={"cursor-pointer hover:text-tertiary"} key={locale} onClick={async () => await setLocale(locale, getNextPath(paths, locale))}>
 						 {map.get(locale)}

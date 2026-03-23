@@ -23,7 +23,7 @@ export default function MobileMenu({
 						{item.label}
 					</DisclosureButton>
 				))}
-				<LanguageSwitcher className={"text-primary block px-3 py-2 text-base font-medium capitalize transition-colors hover:text-[#ffdc84]"} text={nav.language} />
+				<LanguageSwitcher languageStyles={"justify-items-start"} className={"text-primary block px-3 py-2 text-base font-medium capitalize transition-colors hover:text-[#ffdc84]"} text={nav.language} />
 			</div>
 		</DisclosurePanel>
 	);
